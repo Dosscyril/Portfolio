@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Hide scrollbar for Firefox */
+* {
+  scrollbar-width: none !important;
+}
+
+/* Hide scrollbar for IE, Edge Legacy */
+* {
+  -ms-overflow-style: none !important;
+}
+/* Soft smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global soft transitions */
+* {
+  transition: all 0.2s ease-out;
+}
+
+/* Soft fade for each section */
+section {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: softFadeIn 0.6s ease-out forwards;
+}
+
+@keyframes softFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hide scrollbars fully */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+/* Ultra subtle grain texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAEklEQVR42mNkYGD4z0AEYBxVSFQBAOe5CKsAAAAASUVORK5CYII=");
+  opacity: 0.08;
+  z-index: 0;
+}
+html {
+  scroll-behavior: smooth;
+}

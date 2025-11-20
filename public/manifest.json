@@ -1,0 +1,10 @@
+{
+  "short_name": "Portfolio",
+  "name": "Doss Cyril Portfolio",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0f0f15",
+  "background_color": "#0f0f15",
+  "description": "Portfolio website of Doss Cyril — Software Engineer & AI/ML Developer.",
+  "icons": []
+}
