@@ -3,14 +3,8 @@ import WindowCard from "../components/WindowCard";
 
 // Import project images
 import ecommerceImg from "../assets/project/ecommerce.jpg";
-import fashionImg from "../assets/project/fashion.jpg";
 import ragImg from "../assets/project/rag.jpg";
 import yoloImg from "../assets/project/yolo.jpg";
-import museumImg from "../assets/project/museum.jpg";
-
-// Temporary images for new projects (replace later)
-import captionImg from "../assets/project/caption.jpg";
-import fileconvImg from "../assets/project/fileconvert.jpg";
 
 export default function Projects() {
   const sliderRef = useRef(null);
@@ -25,75 +19,33 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "Full-Stack E-Commerce Website",
+      title: "HandMadeHub - E-Commerce Platform",
       image: ecommerceImg,
       description:
-        "A fully functional marketplace with authentication, product management, cart, and order workflow. Built for scalable real-world operations.",
-      tech: ["React", "Tailwind", "Node/Django", "MongoDB/MySQL", "JWT"],
-      github: "#",
-      demo: "#",
-    },
-
-    // NEW PROJECT #1
-    {
-      title: "Video Captioning System (Whisper + OpenCV)",
-      image: captionImg,
-      description:
-        "A video captioning tool that transcribes speech using Whisper and overlays perfectly synchronized subtitles onto videos using OpenCV and FFmpeg.",
-      tech: ["Python", "Whisper", "OpenCV", "FFmpeg", "Deep Learning"],
-      github: "",
-      demo: "#",
-    },
-
-    // NEW PROJECT #2
-    {
-      title: "File Converter Web App (PDF ↔ DOCX)",
-      image: fileconvImg,
-      description:
-        "A full-stack tool to convert files between PDF and Word formats. Clean React UI with a Flask backend for fast and reliable document processing.",
-      tech: ["React", "Flask", "Python", "Docx", "PDF Tools", "REST API"],
-      github: "https://github.com/Dosscyril/file-converter",
-      demo: "#",
+        "Full-stack MERN e-commerce platform serving 60+ real users and processing 20+ transactions for a handcrafted products business. Features secure JWT authentication, integrated payment systems, cart management, and admin dashboard for inventory and order processing.",
+      tech: ["React.js", "Node.js", "Express.js", "MongoDB Atlas", "JWT", "Tailwind CSS", "RESTful APIs"],
+      github: "https://github.com/Dosscyril/HandMadeHub",
+      demo: "https://handmadehub-61cd.onrender.com",
     },
 
     {
-      title: "Fashion Visual Search & Style Assistant",
-      image: fashionImg,
-      description:
-        "AI-driven outfit recommendation engine using embeddings and similarity search to find visually matching outfits.",
-      tech: ["Python", "TensorFlow", "Embeddings", "Vector DB", "FastAPI"],
-      github: "#",
-      demo: "#",
-    },
-
-    {
-      title: "RAG Based Chatbot",
+      title: "RAG-Based Knowledge Chatbot",
       image: ragImg,
       description:
-        "A Retrieval-Augmented Generation bot that uses embeddings and semantic search to provide accurate document-based answers.",
-      tech: ["LLMs", "LangChain", "FAISS", "Python"],
-      github: "#",
-      demo: "#",
+        "AI-powered document Q&A system processing PDFs up to 100MB in 3-5 seconds and delivering answers in 10-15 seconds. Achieved 100% accuracy in testing phases using ChromaDB vector search, Gemini API, and semantic retrieval with Sentence Transformers. Deployed on Streamlit Cloud for students bypassing ChatGPT restrictions.",
+      tech: ["Python", "Streamlit", "LangChain", "ChromaDB", "Gemini API", "Sentence Transformers"],
+      github: "https://github.com/Dosscyril/RAG-Based-Knowledge-chatbot",
+      demo: "https://rag-based-knowledge-chatbot-fcejqjnbphnstdsnslmoot.streamlit.app",
     },
 
     {
-      title: "Object Detection System (YOLO)",
+      title: "Object Detection System (YOLOv8)",
       image: yoloImg,
       description:
-        "Real-time object detection pipeline using YOLO models to detect and track objects with high accuracy.",
-      tech: ["Python", "OpenCV", "YOLOv5/YOLOv8", "PyTorch"],
+        "Computer vision web application for real-time object detection using YOLOv8 deep learning model. Upload images to detect and classify multiple objects with high accuracy. Custom trained on YOLOv8 architecture achieving state-of-the-art detection performance across 80+ object classes.",
+      tech: ["Python", "YOLOv8", "OpenCV", "PyTorch", "Flask", "Deep Learning"],
       github: "https://github.com/Dosscyril/object-detection-webapp",
-      demo: "#",
-    },
-
-    {
-      title: "Museum Chatbot (Ticket Booking)",
-      image: museumImg,
-      description:
-        "An NLP chatbot to book tickets, explain exhibits, and answer FAQs using Dialogflow/RASA.",
-      tech: ["Python", "NLP", "Dialogflow", "Flask", "React"],
-      github: "#",
-      demo: "#",
+      demo: null, // No live demo
     },
   ];
 
@@ -150,7 +102,7 @@ export default function Projects() {
             {projects.map((project, index) => (
               <WindowCard
                 key={index}
-                className="min-w-[300px] sm:min-w-[360px] h-[520px] flex flex-col"
+                className="min-w-[300px] sm:min-w-[360px] h-[540px] flex flex-col"
               >
                 {/* IMAGE */}
                 <div className="w-full h-36 sm:h-40 rounded-lg overflow-hidden shadow">
@@ -167,12 +119,12 @@ export default function Projects() {
                 </h3>
 
                 {/* DESCRIPTION */}
-                <p className="text-gray-800 text-sm mt-2 mb-3 overflow-hidden overflow-y-auto h-[85px] pr-1">
+                <p className="text-gray-800 text-sm mt-2 mb-3 overflow-hidden overflow-y-auto h-[100px] pr-1">
                   {project.description}
                 </p>
 
                 {/* TECH STACK */}
-                <div className="flex flex-wrap gap-2 mb-4 h-[70px] overflow-y-auto pr-1">
+                <div className="flex flex-wrap gap-2 mb-4 h-[80px] overflow-y-auto pr-1">
                   {project.tech.map((t, i) => (
                     <span
                       key={i}
@@ -187,6 +139,8 @@ export default function Projects() {
                 <div className="flex gap-4 mt-auto">
                   <a
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 text-center px-4 py-2 bg-gradient-to-r 
                       from-purple-500 to-blue-500 text-white rounded-lg shadow 
                       hover:opacity-90 transition"
@@ -194,14 +148,26 @@ export default function Projects() {
                     GitHub
                   </a>
 
-                  <a
-                    href={project.demo}
-                    className="flex-1 text-center px-4 py-2 border border-gray-400 
-                      bg-white/40 backdrop-blur-md text-gray-900 
-                      rounded-lg shadow hover:bg-white/60 transition"
-                  >
-                    Live Demo
-                  </a>
+                  {project.demo ? (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center px-4 py-2 border border-gray-400 
+                        bg-white/40 backdrop-blur-md text-gray-900 
+                        rounded-lg shadow hover:bg-white/60 transition"
+                    >
+                      Live Demo
+                    </a>
+                  ) : (
+                    <span
+                      className="flex-1 text-center px-4 py-2 border border-gray-300 
+                        bg-gray-100/40 backdrop-blur-md text-gray-500 
+                        rounded-lg shadow cursor-not-allowed"
+                    >
+                      View on GitHub
+                    </span>
+                  )}
                 </div>
               </WindowCard>
             ))}
