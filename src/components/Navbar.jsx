@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // ❗ Close mobile menu when user scrolls
+  //close mobile menu when user scrolls
   useEffect(() => {
     const handleScroll = () => setMenuOpen(false);
     window.addEventListener("scroll", handleScroll);
